@@ -1,0 +1,46 @@
+/*
+  The only file in the project allowed to hold colour literals.
+
+  Palette provenance. Each value is a k-means centre (k=4, 60000 sampled
+  opaque pixels, seed 0) snapped to the nearest pixel that really exists in
+  the file. Coordinates are x,y in the source raster.
+    ground  brand/LOGO UNIFIED PNG.png            (0,0)       90.9% of pixels
+    ink     brand/LOGO UNIFIED JPG.jpg.jpeg       (617,650)   mark fill, 8.9%
+    void    reference/UNIFIED 1.jpg.jpeg          (928,0)     83.5% of pixels
+    ash     reference/UNIFIED 1.jpg.jpeg          (248,38)    text shadow band
+    mist    reference/UNIFIED 1.jpg.jpeg          (134,38)    mid grey
+    paper   reference/UNIFIED 1.jpg.jpeg          (100,32)    headline grey
+  The transparent logo (colour type 6) carries pure-black RGB under alpha 0,
+  so every resize of it is done in premultiplied space.
+  The art is monochrome, so there is no accent hue. Direction on the market
+  board is carried by sign and glyph, not by colour.
+*/
+:root {
+  --ground: #0f0f0f;
+  --ink: #fdfdfd;
+  --void: #040404;
+  --ash: #2c2c2c;
+  --mist: #838383;
+  --paper: #e5e5e5;
+
+  --line: color-mix(in srgb, var(--ink) 11%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 22%, transparent);
+  --panel: color-mix(in srgb, var(--ink) 4%, transparent);
+  --panel-hi: color-mix(in srgb, var(--ink) 8%, transparent);
+  --text-soft: color-mix(in srgb, var(--paper) 72%, var(--ground));
+  --text-dim: var(--mist);
+
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 420ms;
+  --dur-slow: 900ms;
+
+  --gutter: 16px;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --tap: 44px;
+}

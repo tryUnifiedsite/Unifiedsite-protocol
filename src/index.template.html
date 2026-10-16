@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unified</title>
+<meta name="description" content="A Solana home for projects and the depth behind them, plus a live look at the busiest pairs.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="{{ground}}">
+<link rel="canonical" href="https://unified.site/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unified">
+<meta property="og:description" content="A Solana home for projects and the depth behind them.">
+<meta property="og:url" content="https://unified.site/">
+<meta property="og:image" content="https://unified.site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/boot.js"></script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <a class="brand" href="#top" aria-label="Unified, back to top">
+        <img src="assets/mark-128.png" width="32" height="32" alt="">
+        <b>UNIFIED</b>
+      </a>
+      <div class="social" aria-label="Social channels">
+{{social}}
+      </div>
+    </div>
+{{ca}}
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grid-lines" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="pill" id="status-pill" data-s="wait" data-reveal role="status">
+          <span class="dot" aria-hidden="true"></span><span id="status-text">Connecting</span>
+        </div>
+        <h1 data-reveal>Gather the depth.<em>Skip the hunt.</em></h1>
+        <p class="lede" data-reveal>Unified is a Solana home for projects and the depth that backs them. Follow the busiest pairs below, straight from the public tape, while the rest of the build takes shape in the open.</p>
+        <div class="cta" data-reveal>
+          <a class="btn btn-solid" href="#market">Watch the tape</a>
+          <a class="btn btn-ghost" href="#direction">See the plan</a>
+        </div>
+      </div>
+      <div class="art" id="art" aria-hidden="true" data-reveal>
+        <div class="layer halo" data-depth="0.3"></div>
+        <div class="layer" data-depth="0.5"><span class="ring r1"></span><span class="ring r2"></span></div>
+        <div class="layer" data-depth="0.8"><span class="orbit"></span></div>
+        <div class="layer" data-depth="1.4"><img class="mark" src="assets/mark-768.png" width="768" height="768" alt=""></div>
+        <div class="layer floor" data-depth="0.6"></div>
+      </div>
+    </div>
+    <div class="tiles">
+{{tiles}}
+    </div>
+  </div>
+</section>
+
+<section class="ticker" aria-label="Live pair ticker">
+  <div class="tk-track" id="tk-track">
+    <div class="tk-grp" id="tk-a"></div>
+    <div class="tk-grp" id="tk-b" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="sec" id="market">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Live tape</p>
+    <h2 data-reveal>The ten busiest Solana pairs</h2>
+    <p class="sec-lede" data-reveal>Ranked by day volume from the boosted list of a public aggregator. It refreshes on its own and rests while you are away from this tab.</p>
+    <div class="panel" data-reveal>
+      <div class="panel-head">
+        <div class="tabs" role="tablist" aria-label="Layout">
+          <button class="tab" role="tab" id="tab-board" aria-selected="true" aria-controls="board" data-view="board">Board</button>
+          <button class="tab" role="tab" id="tab-tiles" aria-selected="false" aria-controls="board" data-view="tiles" tabindex="-1">Tiles</button>
+        </div>
+      </div>
+      <p class="mk-msg" id="mk-msg" role="status"></p>
+      <div id="board" class="board" role="tabpanel" aria-labelledby="tab-board">
+        <div class="hd" role="row" aria-hidden="true">
+          <span>#</span><span>Token</span><span>Price</span><span>24h</span><span>Volume</span><span>Pool depth</span><span></span>
+        </div>
+        <div id="rows" class="rows" role="rowgroup"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pillars">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>What it is for</p>
+    <h2 data-reveal>Three jobs, one surface</h2>
+    <p class="sec-lede" data-reveal>Easy to say, hard to do well: give a project a proper pool, stop buyers from scattering, and show each number beside its source.</p>
+    <div class="cards">
+      <article class="card" data-reveal data-spot>
+        <span class="n">I</span>
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6v28M6 20h28"/><circle cx="20" cy="20" r="13"/></svg>
+        <h3>Open a project</h3>
+        <p>The plan is a guided route from rough concept to funded pool, so a team spends its hours on the product instead of the plumbing.</p>
+      </article>
+      <article class="card" data-reveal data-spot>
+        <span class="n">II</span>
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 10h28M10 20h20M14 30h12"/></svg>
+        <h3>Concentrate depth</h3>
+        <p>Thin pools turn each order into a gamble. The design steers orders into shared pools, so quotes stay firm when size arrives.</p>
+      </article>
+      <article class="card" data-reveal data-spot>
+        <span class="n">III</span>
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="7" width="26" height="26" rx="6"/><path d="M14 21l4 4 8-9"/></svg>
+        <h3>Stay legible</h3>
+        <p>Each figure on this page names where it came from. A fact nobody has confirmed yet is shown as waiting, never guessed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flow">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Path</p>
+    <h2 data-reveal>How a project moves through</h2>
+    <ol class="flow">
+      <li class="step" data-reveal><h3>Sketch the concept</h3><p>Name it, size it, decide who it is for. Nothing is deployed until the shape is settled.</p></li>
+      <li class="step" data-reveal><h3>Seed the pool</h3><p>Pair the project with SOL and open the pool, so the earliest buyer meets a real book instead of an empty room.</p></li>
+      <li class="step" data-reveal><h3>Let the market answer</h3><p>Prices, volume and depth show up on the same tape as everything else, open for anyone to read.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="record">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Public record</p>
+    <h2 data-reveal>Confirmed, and still waiting</h2>
+    <p class="sec-lede" data-reveal>Each fact lives in a single entry. Confirmed entries show what they hold. Everything else stays dim and unclickable until the team states it.</p>
+    <div class="recs">
+{{records}}
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="direction">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Direction</p>
+    <h2 data-reveal>Four stages</h2>
+    <div class="road">
+      <article class="ph" data-reveal data-spot><span class="t">Stage one</span><h3>Foundations</h3><ul><li>Page and public record</li><li>Live pair tape</li><li>Brand kit</li></ul></article>
+      <article class="ph" data-reveal data-spot><span class="t">Stage two</span><h3>Address and channels</h3><ul><li>Publish the contract address</li><li>Open social channels</li><li>Share the written plan</li></ul></article>
+      <article class="ph" data-reveal data-spot><span class="t">Stage three</span><h3>Pools</h3><ul><li>Opening shared pools</li><li>Quote preview</li><li>Depth reporting</li></ul></article>
+      <article class="ph" data-reveal data-spot><span class="t">Stage four</span><h3>Open build</h3><ul><li>Public code</li><li>Builder tooling</li><li>Community review</li></ul></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top" aria-label="Unified, back to top"><img src="assets/mark-128.png" width="32" height="32" alt=""><b>UNIFIED</b></a>
+      <p>Market figures come from a public aggregator and can lag or be wrong. Nothing on this page is advice.</p>
+    </div>
+    <nav aria-label="Sections"><a href="#market">Tape</a><a href="#pillars">Purpose</a><a href="#record">Record</a><a href="#direction">Direction</a></nav>
+  </div>
+</footer>
+
+<div class="sr" id="announce" aria-live="polite"></div>
+<script type="application/json" id="register">{{register}}</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

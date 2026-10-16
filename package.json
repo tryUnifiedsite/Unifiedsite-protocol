@@ -1,0 +1,14 @@
+{
+  "name": "unified-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static site for Unified. Output lives in dist/.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
